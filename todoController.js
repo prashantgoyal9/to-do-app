@@ -136,9 +136,8 @@ function deleteTask(e){
         method: "DELETE",
     })
     .then(res =>{ 
-        getAll();
+   window.location.reload();
     return res.json() 
-        
     })
 }
 
