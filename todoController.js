@@ -3,7 +3,9 @@ const url = "https://prashant-todo-app.herokuapp.com/user";
 var taskToEdit = -1;
 let currentTasks =[];
 let editing = false;
-getAll();
+setTimeout(() => {
+    getAll();
+}, 1000);
 closeForm();
 
 // Add a "checked" symbol when clicking on a list item
