@@ -1,0 +1,347 @@
+/* Include the padding and border in an element's total width and height */
+* {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Ubuntu', sans-serif;
+  }
+ body{
+   overflow-x: hidden;
+ }
+
+  h2{
+    margin: 5px 0px 32px;
+    font-size: 3rem;
+  }
+  
+  ul {
+    margin: 0;
+    display: grid;
+  }
+
+  .blur {
+    filter: blur(5px);
+    transition: 500ms;
+  }
+  
+  /* Style the list items */
+  ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    background: #cdced7;
+    font-size: 18px;
+    transition: 0.2s;
+    border-radius: 5vh;
+    margin: 1%;
+    display: flex;
+    flex-direction: row;
+    gap:1rem;
+    
+    
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Set all odd list items to a different color (zebra-stripes) */
+  ul li:nth-child(odd) {
+    background: #f9f9f9;
+  }
+  
+  /* Darker background-color on hover */
+  ul li:hover {
+    background: #ddd;
+  }
+  
+  /* When clicked on, add a background color and strike out text */
+  ul li.checked {
+    background-color: hsl(162deg 65% 62%);
+    color: #fff;
+    text-decoration: line-through;
+  }
+  
+  /* Add a "checked" mark when clicked on */
+  ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }
+
+
+
+
+
+  .close {
+    position: absolute;
+    right: 5%;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+    
+  }
+  
+  .close:hover {
+    background-color: #f44336;
+    color: white;
+    border-radius: 5vh;
+    transition: 0.5s;
+
+  }
+  .edit:hover{
+    background-color: #e3e338;
+    color: white;
+    border-radius: 5vh;
+    transition: 0.5s;
+
+  }
+  
+  /* Style the header */
+  .header {
+    background-color: hsl(162deg 45% 20%);
+    display: flex;
+    justify-content: center;    
+  }
+  
+  /* Clear floats after the header */
+  .header:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .headerbox {
+    padding: 30px 16%;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+
+  #addForm{
+    display: flex;
+    flex-direction: column;
+    align-items: inherit;
+  }
+
+  .ll{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  /* Style the input */
+
+  #taskName {
+    border: none;
+    border-radius: 0;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+    border-radius: 18vh;
+  }
+
+  #searching{
+    margin-top: 2%;
+    border: none;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+    border-radius: 18vh;
+    width: 50%;
+  }
+  
+  /* Style the "Add" button */
+  .addBtn {
+    padding: 8.5px;
+    background: #d3ded5;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 19px;
+    cursor: pointer;
+    transition: 0.8s;
+    border-radius: 18vh;
+  }
+  
+  .addBtn:hover {
+    background-color: rgb(23, 223, 56);
+  }
+  
+  .edit{
+    position: absolute;
+    right:25%;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+  }
+ 
+  .maincont{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  /* Button used to open the contact form - fixed at the bottom of the page */
+
+.open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+  }
+  
+  /* The popup form - hidden by default */ */
+   .form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  } 
+   
+  /* Add styles to the form container */
+  .form-container {
+   
+    padding: 10px;
+    background-color: #2c2929;
+    z-index: 10;
+    display: block;
+    position: fixed;
+    top: 20rem;
+   
+    border-radius: 9%;
+    left: 31%;
+    opacity: 70%;
+    transition: all 0.5 ease;
+    max-width: 550px;
+     width: 47%;
+     margin: 
+     50px auto; 
+     text-align: left;
+  } 
+   
+  /* Full-width input fields */
+   .form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  } 
+  
+  /* When the inputs get focus, do something */
+   .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  } 
+  
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  } 
+  
+  /* Add a red background color to the cancel button */
+   .form-container .cancel {
+    background-color: red;
+  } 
+  
+  /* Add some hover effects to buttons */
+   .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+
+
+  @media screen and (max-width:500px) {
+  ul li{
+width: 80vw;
+font-size: 8vw;
+  }
+ #taskName{
+   width: 80vw;
+ }
+ #searching{
+   width : 80vw;
+ }
+ .maincont{
+   width: 80vw;
+ }
+ .edit{
+   margin-right: 10px;
+ }
+ .edit:hover{
+   margin-right: 15px;
+ }
+ 
+  }
+  @media screen and (max-width:410px) {
+    ul li{
+  width: 70vw;
+  font-size: 6vw;
+    }
+    #taskName{
+      width: 70vw;
+    }
+    #searching{
+      width : 70vw;
+    }
+    .maincont{
+      width: 70vw;
+    }
+    
+    }
+    @media screen and (max-width:500px) {
+      ul li{
+    width: 98vw;
+    font-size: 4vw;
+      }
+      #taskName{
+        width: 67vw;
+      }
+      #searching{
+        width : 93vw;
+      }
+      .maincont{
+        width: 98vw;
+      }
+     
+      }
+      
+      
+  
+/* Responsive */
+
+/* @media screen and (max-width: 700px) {
+  #searching {
+    width: 50%;
+  }
+} */ 

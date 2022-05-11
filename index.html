@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="todoStyle.css">
+<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+<div id="addForm" class="header">
+  <div class="headerbox">
+  <h2>My To Do List</h2>
+  <div class="ll">
+    <input type="text" id="taskName" placeholder="Add task ....">
+    <span onclick="addNewTask()" class="addBtn">Add</span>
+  </div>
+  <input type="text" id="searching" placeholder=" search ....">
+</div>
+</div>
+
+
+
+<div class="maincont">
+  <span >
+    <input type="radio" id="All" name="fav_language" value="All" onclick="getAll()" checked>
+    <label for="html">All</label>
+  </span>
+  <span>
+    <input type="radio" id="Checked" name="fav_language" value="Checked" onclick="getChecked()">
+    <label for="css">Checked</label>
+  </span>
+  <span>
+    <input type="radio" id="Unchecked" name="fav_language" value="Unchecked" onclick="getUnChecked()">
+    <label for="javascript">Unchecked</label>
+  </span>
+</div>
+<div class="error">
+</div>
+
+<ul id="todoList">
+</ul>
+
+<div class="edit-task" id="taskForm">
+  <form class="form-container">
+    <label for="title"><b>Title</b></label>
+    <input id="editedTaskName" type="text" placeholder="Enter Title" name="title" required>
+    <button type="button" class="btn" id="btn" onclick="updateTask()">Submit</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+
+<script src="todoController.js"></script>
+<script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+</body>
+</html>
